@@ -1,4 +1,4 @@
-/* Fondo y tipografía */
+/* Fondo general */
 body {
     background-color: #0a0a0a;
     color: #00ff88;
@@ -6,6 +6,26 @@ body {
     margin: 0;
     padding: 0;
     text-align: center;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* Scan lines tipo CRT */
+.scanlines {
+    pointer-events: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(
+        to bottom,
+        rgba(0, 255, 136, 0.05),
+        rgba(0, 255, 136, 0.05) 2px,
+        transparent 2px,
+        transparent 4px
+    );
+    z-index: 1;
 }
 
 /* Encabezado */
@@ -13,12 +33,55 @@ header h1 {
     font-size: 3em;
     margin-top: 50px;
     text-shadow: 0 0 10px #00ff88;
+    position: relative;
+    z-index: 2;
 }
 
 header h2 {
     font-size: 1.5em;
     color: #00cc66;
     text-shadow: 0 0 5px #00cc66;
+    z-index: 2;
+    position: relative;
+}
+
+/* Efecto glitch */
+.glitch {
+    position: relative;
+    color: #00ff88;
+}
+
+.glitch::before,
+.glitch::after {
+    content: attr(data-text);
+    position: absolute;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    color: #00ff88;
+    clip: rect(0, 900px, 0, 0);
+}
+
+.glitch::before {
+    animation: glitchTop 2s infinite linear alternate-reverse;
+    color: #00ff88;
+}
+
+.glitch::after {
+    animation: glitchBottom 1.5s infinite linear alternate-reverse;
+    color: #00cc66;
+}
+
+@keyframes glitchTop {
+    0% { clip: rect(0, 9999px, 0, 0); }
+    50% { clip: rect(0, 9999px, 40px, 0); left: 2px; }
+    100% { clip: rect(0, 9999px, 0, 0); }
+}
+
+@keyframes glitchBottom {
+    0% { clip: rect(0, 9999px, 0, 0); }
+    50% { clip: rect(40px, 9999px, 80px, 0); left: -2px; }
+    100% { clip: rect(0, 9999px, 0, 0); }
 }
 
 /* Bio */
@@ -26,6 +89,8 @@ header h2 {
     max-width: 600px;
     margin: 30px auto;
     font-size: 1.2em;
+    position: relative;
+    z-index: 2;
 }
 
 /* Links */
@@ -38,6 +103,8 @@ header h2 {
     color: #00ff88;
     text-decoration: none;
     transition: background-color 0.3s, color 0.3s;
+    position: relative;
+    z-index: 2;
 }
 
 .links a:hover {
@@ -50,7 +117,12 @@ footer {
     margin-top: 50px;
     font-size: 0.9em;
     color: #007755;
+    position: relative;
+    z-index: 2;
 }
 
-/* Pequeño efecto glitch (opcional avanzado) */
-/* Si quieres te puedo agregar un efecto "glitch" cyberpunk para el título */
+/* Responsive */
+@media (max-width: 600px) {
+    header h1 { font-size: 2em; }
+    header h2 { font-size: 1.2em; }
+}
