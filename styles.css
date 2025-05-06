@@ -139,6 +139,18 @@ header h2 {
     margin: 8px 0;
     list-style: none;
 }
+/* Playlist */
+.playlist {
+    margin-top: 40px;
+    font-size: 1.1em;
+}
+
+.playlist h3 {
+    color: #00cc66;
+    text-shadow: 0 0 5px #00cc66;
+    margin-bottom: 20px;
+}
+
 
 /* Responsive básico */
 @media (max-width: 600px) {
