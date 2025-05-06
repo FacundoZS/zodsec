@@ -1,16 +1,29 @@
-/* Fondo general */
+/* General */
 body {
-    background-color: #0a0a0a;
+    background-color: #000000;
     color: #00ff88;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: 'Share Tech Mono', 'Courier New', Courier, monospace;
     margin: 0;
     padding: 0;
     text-align: center;
-    position: relative;
     overflow-x: hidden;
+    position: relative;
 }
 
-/* Scan lines tipo CRT */
+/* Matrix background */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: url('https://i.ibb.co/NjSPV7M/matrix-rain.gif') center center / cover no-repeat;
+    opacity: 0.15; /* Sutil para no tapar contenido */
+    z-index: -1;
+}
+
+/* Scan lines */
 .scanlines {
     pointer-events: none;
     position: fixed;
@@ -20,32 +33,28 @@ body {
     height: 100%;
     background: repeating-linear-gradient(
         to bottom,
-        rgba(0, 255, 136, 0.05),
-        rgba(0, 255, 136, 0.05) 2px,
+        rgba(0, 255, 136, 0.03),
+        rgba(0, 255, 136, 0.03) 2px,
         transparent 2px,
         transparent 4px
     );
-    z-index: 1;
+    z-index: 0;
 }
 
-/* Encabezado */
+/* Header */
 header h1 {
-    font-size: 3em;
+    font-size: 3.2em;
     margin-top: 50px;
-    text-shadow: 0 0 10px #00ff88;
-    position: relative;
-    z-index: 2;
+    text-shadow: 0 0 12px #00ff88;
 }
 
 header h2 {
     font-size: 1.5em;
     color: #00cc66;
-    text-shadow: 0 0 5px #00cc66;
-    z-index: 2;
-    position: relative;
+    text-shadow: 0 0 6px #00cc66;
 }
 
-/* Efecto glitch */
+/* Glitch effect */
 .glitch {
     position: relative;
     color: #00ff88;
@@ -63,66 +72,66 @@ header h2 {
 }
 
 .glitch::before {
-    animation: glitchTop 2s infinite linear alternate-reverse;
-    color: #00ff88;
+    animation: glitchTop 3s infinite linear alternate-reverse;
 }
 
 .glitch::after {
-    animation: glitchBottom 1.5s infinite linear alternate-reverse;
+    animation: glitchBottom 2s infinite linear alternate-reverse;
     color: #00cc66;
 }
 
 @keyframes glitchTop {
     0% { clip: rect(0, 9999px, 0, 0); }
-    50% { clip: rect(0, 9999px, 40px, 0); left: 2px; }
+    50% { clip: rect(0, 9999px, 35px, 0); left: 1px; }
     100% { clip: rect(0, 9999px, 0, 0); }
 }
 
 @keyframes glitchBottom {
     0% { clip: rect(0, 9999px, 0, 0); }
-    50% { clip: rect(40px, 9999px, 80px, 0); left: -2px; }
+    50% { clip: rect(35px, 9999px, 75px, 0); left: -1px; }
     100% { clip: rect(0, 9999px, 0, 0); }
 }
 
 /* Bio */
 .bio {
-    max-width: 600px;
+    max-width: 700px;
     margin: 30px auto;
-    font-size: 1.2em;
-    position: relative;
-    z-index: 2;
+    font-size: 1.3em;
 }
 
 /* Links */
 .links a {
     display: inline-block;
-    margin: 10px;
-    padding: 10px 20px;
+    margin: 12px;
+    padding: 12px 24px;
     border: 2px solid #00ff88;
-    border-radius: 5px;
+    border-radius: 6px;
     color: #00ff88;
     text-decoration: none;
-    transition: background-color 0.3s, color 0.3s;
-    position: relative;
-    z-index: 2;
+    transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
 }
 
 .links a:hover {
     background-color: #00ff88;
-    color: #0a0a0a;
+    color: #000000;
+    box-shadow: 0 0 10px #00ff88;
 }
 
 /* Footer */
 footer {
-    margin-top: 50px;
+    margin-top: 60px;
     font-size: 0.9em;
     color: #007755;
-    position: relative;
-    z-index: 2;
 }
 
-/* Responsive */
+/* Responsive básico */
 @media (max-width: 600px) {
     header h1 { font-size: 2em; }
     header h2 { font-size: 1.2em; }
+}
+
+/* Placeholder para futuras secciones */
+.skills, .education {
+    margin-top: 40px;
+    font-size: 1.1em;
 }
