@@ -18,7 +18,7 @@ body::before {
     left: 0;
     width: 100vw;
     height: 100vh;
-    background: url('https://raw.githubusercontent.com/FacundoZS/zodsec/main/back.jpg') center center / cover no-repeat;
+    background: url('back.jpg') center center / cover no-repeat;
     opacity: 0.15; /* Sutil para no tapar contenido */
     z-index: -1;
 }
