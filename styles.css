@@ -117,11 +117,11 @@ header h2 {
     box-shadow: 0 0 10px #00ff88;
 }
 
+
 /* Skills y Educación */
 .skills, .education {
     margin-top: 40px;
     font-size: 1.1em;
-    list-style: none;
 }
 
 .skills h3, .education h3 {
@@ -129,15 +129,15 @@ header h2 {
     text-shadow: 0 0 5px #00cc66;
 }
 
-.skills ul li, .education ul li {
-    margin: 8px 0;
+/* 🔥 Esto elimina los bullets */
+.skills ul, .education ul {
+    list-style: none;
+    padding: 0;
 }
 
-/* Footer */
-footer {
-    margin-top: 60px;
-    font-size: 0.9em;
-    color: #007755;
+.skills ul li, .education ul li {
+    margin: 8px 0;
+    list-style: none;
 }
 
 /* Responsive básico */
