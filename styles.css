@@ -18,7 +18,7 @@ body::before {
     left: 0;
     width: 100vw;
     height: 100vh;
-    background: url('https://i.ibb.co/NjSPV7M/matrix-rain.gif') center center / cover no-repeat;
+    background: url('https://plus.unsplash.com/premium_photo-1683121713210-97667d2e83c8?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8Zm9uZG8lMjBkZSUyMHBhbnRhbGxhJTIwZGUlMjB0ZWNub2xvZyVDMyVBRGF8ZW58MHx8MHx8fDA%3D') center center / cover no-repeat;
     opacity: 0.15; /* Sutil para no tapar contenido */
     z-index: -1;
 }
