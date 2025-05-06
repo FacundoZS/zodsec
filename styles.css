@@ -23,7 +23,7 @@ body::before {
     z-index: -1;
 }
 
-/* Scan lines */
+/* Scan lines tipo CRT */
 .scanlines {
     pointer-events: none;
     position: fixed;
@@ -117,6 +117,22 @@ header h2 {
     box-shadow: 0 0 10px #00ff88;
 }
 
+/* Skills y Educación */
+.skills, .education {
+    margin-top: 40px;
+    font-size: 1.1em;
+    list-style: none;
+}
+
+.skills h3, .education h3 {
+    color: #00cc66;
+    text-shadow: 0 0 5px #00cc66;
+}
+
+.skills ul li, .education ul li {
+    margin: 8px 0;
+}
+
 /* Footer */
 footer {
     margin-top: 60px;
@@ -128,10 +144,4 @@ footer {
 @media (max-width: 600px) {
     header h1 { font-size: 2em; }
     header h2 { font-size: 1.2em; }
-}
-
-/* Placeholder para futuras secciones */
-.skills, .education {
-    margin-top: 40px;
-    font-size: 1.1em;
 }
