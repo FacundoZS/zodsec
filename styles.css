@@ -141,14 +141,14 @@ header h2 {
 }
 /* Playlist */
 .playlist {
-    margin-top: 40px;
+    margin-top: 60px;
     font-size: 1.1em;
 }
 
 .playlist h3 {
     color: #00cc66;
     text-shadow: 0 0 5px #00cc66;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
 }
 
 
